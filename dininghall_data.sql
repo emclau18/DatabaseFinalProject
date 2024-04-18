@@ -45,13 +45,58 @@ INSERT INTO menu VALUES
 ('Wednesday', 'Salad Station', 'Lunch', 'various salad assortments');
 INSERT INTO menu VALUES
 ('Thursdsay', 'Salad Station', 'Lunch', 'various salad assortments');
+INSERT INTO menu VALUES
+('Friday', 'Salad Station', 'Lunch', 'various salad assortments');
+INSERT INTO menu VALUES
+('Monday', 'Southwest Station', 'Dinner', 'rice, beans, meat, toppings');
+INSERT INTO menu VALUES
+('Tuesday', 'Southwest Station', 'Lunch', 'rice, beans, meat, toppings');
+INSERT INTO menu VALUES
+('Wednesday', 'Southwest Station', 'Dinner', 'rice, beans, meat, toppings');
+INSERT INTO menu VALUES
+('Thursdsay', 'Southwest Station', 'Lunch', 'rice, beans, meat, toppings');
+INSERT INTO menu VALUES
+('Friday', 'Southwest Station', 'Dinner', 'rice, beans, meat, toppings');
+INSERT INTO menu VALUES
+('Monday', 'Holy Grounds', 'Breakfast', 'egg nova');
+INSERT INTO menu VALUES
+('Tuesday', 'Holy Grounds', 'Breakfast', 'egg nova');
+INSERT INTO menu VALUES
+('Wednesday', 'Holy Grounds', 'Breakfast', 'egg nova');
+INSERT INTO menu VALUES
+('Thursdsay', 'Holy Grounds', 'Breakfast', 'egg nova');
+INSERT INTO menu VALUES
+('Friday', 'Holy Grounds', 'Breakfast', 'egg nova');
 
 
 INSERT INTO inventory VALUES ('Southwest Station', 'grilled chicken', 'Contains none');
 INSERT INTO inventory VALUES ('Southwest Station', 'shredded cheese', 'Contains dairy');
 INSERT INTO inventory VALUES ('Southwest Station', 'diced tomatoes', 'Contains none');
 INSERT INTO inventory VALUES ('Southwest Station', 'black beans', 'Contains none');
+INSERT INTO inventory VALUES ('Delicatessen', 'ham', 'Contains none');
+INSERT INTO inventory VALUES ('Delicatessen', 'american cheese', 'Contains dairy');
+INSERT INTO inventory VALUES ('Delicatessen', 'tomatos', 'Contains none');
+INSERT INTO inventory VALUES ('Delicatessen', 'turkey', 'Contains none');
+INSERT INTO inventory VALUES ('Delicatessen', 'hoagie rolls', 'Contains gluten');
+INSERT INTO inventory VALUES ('Delicatessen', 'pickles', 'Contains none');
+INSERT INTO inventory VALUES ('Holy Grounds', 'black coffee', 'Contains none');
+INSERT INTO inventory VALUES ('Holy Grounds', 'whole milk', 'Contains dairy');
+INSERT INTO inventory VALUES ('Holy Grounds', 'bagels', 'Contains gluten');
+INSERT INTO inventory VALUES ('Holy Grounds', 'cream cheese', 'Contains dairy');
+INSERT INTO inventory VALUES ('Holy Grounds', 'black tea', 'Contains none');
+INSERT INTO inventory VALUES ('Pizza Station', 'red sauce', 'Contains none');
+INSERT INTO inventory VALUES ('Pizza Station', 'pizza dough', 'Contains gluten');
+INSERT INTO inventory VALUES ('Pizza Station', 'flour', 'Contains none');
+INSERT INTO inventory VALUES ('Pizza Station', 'mozzerella cheese', 'Contains diary');
 
 INSERT INTO restrictions VALUES ('02405999', 'none', 'The Court at Donahue', 'none');
-INSERT INTO restrictions VALUES ('02416009', 'none', 'St. Marys Hall', 'gluten');
+INSERT INTO restrictions VALUES ('02416009', 'shellfish', 'St. Marys Hall', 'gluten');
 INSERT INTO restrictions VALUES ('12345678', 'none', 'St. Marys Hall', 'none');
+INSERT INTO restrictions VALUES ('02451999', 'none', 'The Court at Donahue', 'none');
+INSERT INTO restrictions VALUES ('87654321', 'none', 'St. Marys Hall', 'gluten');
+INSERT INTO restrictions VALUES ('27583459', 'treenuts', 'St. Marys Hall', 'none');
+INSERT INTO restrictions VALUES ('43810948', 'none', 'Dougherty Hall', 'dairy');
+INSERT INTO restrictions VALUES ('84653849', 'shellfish', 'St. Marys Hall', 'none');
+INSERT INTO restrictions VALUES ('98763098', 'none', 'The Court at Donahue', 'none');
+INSERT INTO restrictions VALUES ('17284067', 'none', 'Bartley hall', 'gluten');
+INSERT INTO restrictions VALUES ('18304678', 'none', 'St. Marys Hall', 'dairy');
