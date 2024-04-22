@@ -4,10 +4,11 @@ ADD CONSTRAINT menu_station_fk
 FOREIGN KEY (station_name)
 REFERENCES stations(station_name);
 
--- To retrieve the days of the week that the station has lunch on Tuesday at St. Mary's Hall:
-SELECT DISTINCT dotw
-FROM menu
-WHERE station_name = 'St. Marys Hall'
+-- To retrieve what food is served at St. Marys Hall on Tuesday for lunch:
+SELECT DISTINCT m.food, s.station_name
+FROM menu m, stations s
+WHERE m.station_name = s.station_name 
+AND s.dlocation = 'St. Marys Hall'
 AND tod = 'Lunch'
 AND dotw = 'Tuesday';
 
@@ -24,16 +25,11 @@ JOIN inventory i ON s.station_name = i.station_name
 WHERE s.dlocation = 'Bartley Hall'
 AND EXISTS (
     SELECT 1
-    FROM menu m
+    FROM menu m, stations s
     WHERE m.station_name = s.station_name
     AND m.dotw = 'Wednesday'
 );
 
--- Connection between restrictions and inventory 
-ALTER TABLE restrictions
-ADD CONSTRAINT restrictions_inventory_fk
-FOREIGN KEY (allergy)
-REFERENCES inventory(allergen);
 
 -- Connection between student_MP and restrictions 
 ALTER TABLE restrictions
@@ -53,21 +49,22 @@ FROM studentMP
 WHERE lname = 'Smith';
 
 -- Retrieve Menu Items for a Specific Station and Day
-SELECT food
-FROM menu
-WHERE station_name = 'St. Marys Hall'
+SELECT m.food, s.station_name
+FROM menu m, stations s
+WHERE s.station_name = m.station_name 
+AND s.dlocation = 'St. Marys Hall'
 AND dotw = 'Monday';
 
 -- Check Inventory of a Station
 SELECT food, allergen
 FROM inventory
-WHERE station_name = 'Southwest Station';
+WHERE station_name = 'Southwest South';
 
--- Find Stations with Specific Allergens
+-- Find Stations with Specific Allergens NEEDS WORK
 SELECT DISTINCT s.station_name
-FROM stations s
+FROM stations s, inventory i
 LEFT JOIN inventory i ON s.station_name = i.station_name
-WHERE i.allergen IS NULL;
+WHERE i.allergen = 'none';
 
 -- Check Restrictions for a Student
 SELECT allergy, preference
@@ -79,7 +76,7 @@ UPDATE studentMP
 SET balance = balance - 10
 WHERE lname = 'Smith';
 
--- Insert New Student with Meal Plan:
+-- Insert New Student with Meal Plan: NEEDS WORK
 INSERT INTO studentMP (fname, lname, dob, vuid, plan_type, balance, allergy)
 VALUES ('John', 'Doe', '01012000', '12345679', '21 a week', 100, 'none');
 
