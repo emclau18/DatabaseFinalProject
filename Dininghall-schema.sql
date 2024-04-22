@@ -11,14 +11,14 @@ CREATE TABLE studentMP(
 );
 
 CREATE TABLE stations(
-	station_name	varchar(15),
-	dlocation	varchar(15),
+	station_name	varchar(25),
+	dlocation	varchar(25),
 	CONSTRAINT stations_pk primary key (station_name)
 );
 
 CREATE TABLE menu(
-	dotw 		date,			-- day of the week
-	station_name	varchar(15),
+	dotw 		varchar(15),			-- day of the week
+	station_name	varchar(25),
 	tod 		varchar(15),		--time of day 
 	food 		varchar(50),
 	CONSTRAINT menu_pk primary key (food),
@@ -26,18 +26,17 @@ CREATE TABLE menu(
 );
 
 CREATE TABLE inventory(
-	station_name	varchar(15),
-	food		varchar(15),
-	allergen 	varchar(15),
-	CONSTRAINT inventory_pk primary key (food),
-	CONSTRAINT inventory_fk foreign key(food) references menu(food)
+	station_name	varchar(25),
+	food		varchar(50),
+	allergen 	varchar(25),
+	CONSTRAINT inventory_pk primary key (food)
 );
 
 CREATE TABLE restrictions(
 	vuid 		char(8),
-	allergy 	varchar(15),
-	preference 	varchar(15),
-	tolerance 	varchar(15),
+	allergy 	varchar(25),
+	preference 	varchar(25),
+	tolerance 	varchar(25),
 	CONSTRAINT restrictions_pk primary key(vuid)
 	--CONSTRAINT restrictions_fk foreign key(allergy) references inventory(allergen)
 );
